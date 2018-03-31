@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float speed = 10.0f;
 
-    // Use this for initialization
-    void Start()
+    public int turn = 5;
+
+    void Update()
     {
 
-    }
-
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        transform.position -= movement * speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.RightArrow) && (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow)))
+        {
+            transform.Rotate(Vector3.forward * speed * turn * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) && (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow)))
+        {
+            transform.Rotate(Vector3.back * speed * turn * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(new Vector3(0, -1, 0) * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+        }
     }
 }
