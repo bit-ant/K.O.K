@@ -27,6 +27,10 @@ public class StopSign : MonoBehaviour
         {
             playerScript.playerScore -= 10;
         }
+        else
+        {
+            playerScript.playerScore += 10;
+        }
     }
     private IEnumerator Count()
     {
