@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stop
+  - GreenLight
+  - RedLight
+  - YellowLight
+  - Light
   layers:
   - Default
   - TransparentFX

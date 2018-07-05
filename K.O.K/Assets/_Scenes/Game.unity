@@ -2697,6 +2697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77156b9d94ab29409ea5626bf6441d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GreenLightMaterial: {fileID: 2100000, guid: 3cb29365124f85d489ab98a08d47e2e3, type: 2}
+  RedLightMaterial: {fileID: 2100000, guid: e714881fd2ad2b04a9e4d718bd640082, type: 2}
+  YellowLightMaterial: {fileID: 2100000, guid: c42434db4dd662448aa22f315d984e64, type: 2}
+  OffLightMaterial: {fileID: 2100000, guid: 1b172e902b5e6634abd99fd25aef8732, type: 2}
 --- !u!1 &405461229 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 1e50ef3048667495d90210b70c070c6b, type: 3}
@@ -6733,6 +6737,18 @@ Prefab:
     - target: {fileID: 4666256428830124, guid: 138ee1fae66fe9f438ffa117092a4c04, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618736557845732, guid: 138ee1fae66fe9f438ffa117092a4c04, type: 2}
+      propertyPath: m_TagString
+      value: GreenLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452668699158124, guid: 138ee1fae66fe9f438ffa117092a4c04, type: 2}
+      propertyPath: m_TagString
+      value: RedLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158534961444742, guid: 138ee1fae66fe9f438ffa117092a4c04, type: 2}
+      propertyPath: m_TagString
+      value: YellowLight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138ee1fae66fe9f438ffa117092a4c04, type: 2}
