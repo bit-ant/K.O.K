@@ -11,6 +11,10 @@ public class TrafficLight : MonoBehaviour {
 
     private string OnLight; // Determines which light is on
 
+    private float timeInTrigger;
+    private GameObject player;
+    private PlayerController playerScript;
+
     public Material GreenLightMaterial;
     public Material RedLightMaterial;
     public Material YellowLightMaterial;
@@ -22,6 +26,9 @@ public class TrafficLight : MonoBehaviour {
         OnLight = RedLight; // Intially we have a red light
 
         InvokeRepeating("ChangeLight", 1.0f, 3.0f); // Change light every 3 seconds
+
+        player = GameObject.Find("accent");
+        playerScript = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -95,5 +102,16 @@ public class TrafficLight : MonoBehaviour {
     {
         return (child.tag == GreenLight || child.tag == RedLight || child.tag == YellowLight);
     }
-      
+
+    void OnTriggerExit(Collider other)
+    {
+        if (RedLight == OnLight)
+        {
+            playerScript.playerScore -= 20;
+        }
+        else
+        {
+            playerScript.playerScore += 20;
+        }
+    }
 }

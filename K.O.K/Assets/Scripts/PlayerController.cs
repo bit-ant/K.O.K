@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,6 +51,21 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         SetScoreText();
+
+        if (playerScore <= 0.0f || playerScore >= 100.0f)
+        {
+            Debug.Log("Ending game");
+            if (playerScore <= 0.0f)
+            {
+                PlayerPrefs.SetString("Game Result", "Game Over");
+            }
+            else
+            {
+                PlayerPrefs.SetString("Game Result","You win!");
+            }
+            // End the game
+            SceneManager.LoadScene("EndGame");
+        }
     }
 
     void SetScoreText()

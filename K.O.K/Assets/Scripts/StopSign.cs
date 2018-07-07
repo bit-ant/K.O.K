@@ -25,11 +25,11 @@ public class StopSign : MonoBehaviour
         StopCoroutine("Count");
         if (T <= 3)
         {
-            playerScript.playerScore -= 10;
+            playerScript.playerScore -= 20;
         }
         else
         {
-            playerScript.playerScore += 10;
+            playerScript.playerScore += 20;
         }
     }
     private IEnumerator Count()
