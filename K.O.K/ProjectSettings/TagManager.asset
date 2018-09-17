@@ -9,6 +9,11 @@ TagManager:
   - RedLight
   - YellowLight
   - Light
+  - fanari
+  - TLright
+  - TLwrong
+  - StopRight
+  - StopWrong
   layers:
   - Default
   - TransparentFX

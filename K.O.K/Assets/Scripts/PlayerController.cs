@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         SetScoreText();
-
         if (playerScore <= 0.0f || playerScore >= 100.0f)
         {
             Debug.Log("Ending game");
@@ -72,4 +71,5 @@ public class PlayerController : MonoBehaviour
     {
         scoreText.text = "Player Score: " + playerScore.ToString();
     }
+
 }
