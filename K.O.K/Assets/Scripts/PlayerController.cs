@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
-        playerScore = 50.0f;
+        playerScore = 100.0f;
         SetScoreText();
     }
 
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         SetScoreText();
-        if (playerScore <= 0.0f || playerScore >= 100.0f)
+        if (playerScore <= 0.0f || playerScore >= 200.0f)
         {
             Debug.Log("Ending game");
             if (playerScore <= 0.0f)

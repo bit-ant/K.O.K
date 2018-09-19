@@ -5,22 +5,22 @@ using UnityEngine;
 public class StopSign : MonoBehaviour
 {
     private GameObject player;
-    private GameObject StopR;
-    private GameObject StopW;
+    public GameObject StopR;
+    public GameObject StopW;
 
     public float T;
-    PlayerController playerScript;
+    private PlayerController playerScript;
 
     void Start()
     {
         player = GameObject.Find("accent");
-        StopR = GameObject.FindGameObjectWithTag("StopRight");
+        //StopR = GameObject.FindGameObjectWithTag("StopRight");
         StopR.gameObject.SetActive(false);
-        StopW = GameObject.FindGameObjectWithTag("StopWrong");
+        //StopW = GameObject.FindGameObjectWithTag("StopWrong");
         StopW.gameObject.SetActive(false);
         playerScript = player.GetComponent<PlayerController>();
     }
-
+    
     
     void OnTriggerEnter(Collider other)
     {
@@ -35,24 +35,22 @@ public class StopSign : MonoBehaviour
         {
             playerScript.playerScore -= 20;
             StopW.gameObject.SetActive(true);
-            Invoke("DisableText1", 3);
+            Invoke("DisableText", 3);
         }
         else
         {
             playerScript.playerScore += 20;
             StopR.gameObject.SetActive(true);
-            Invoke("DisableText2", 3);
+            Invoke("DisableText", 3);
         }
 
     }
 
-    void DisableText1()
+    void DisableText()
     {
         StopW.gameObject.SetActive(false);
-    }
-    void DisableText2()
-    {
         StopR.gameObject.SetActive(false);
+
     }
     private IEnumerator Count()
     {

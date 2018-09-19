@@ -14,6 +14,8 @@ TagManager:
   - TLwrong
   - StopRight
   - StopWrong
+  - pedestrian
+  - CrossWalk
   layers:
   - Default
   - TransparentFX

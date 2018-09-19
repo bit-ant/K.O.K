@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 114606890307476468}
   m_Layer: 0
   m_Name: man
-  m_TagString: Untagged
+  m_TagString: pedestrian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,10 +747,10 @@ Animator:
   m_GameObject: {fileID: 1503856157617204}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 50f4e8bbe8f875e4ab3afd038dc72e1c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 07f7e369ba6e5dc4ab3cb1ac0387e904, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbebcf6c605d4484e92d87f7df484250, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

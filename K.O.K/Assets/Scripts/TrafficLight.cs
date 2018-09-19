@@ -8,11 +8,11 @@ using System;
 public class TrafficLight : MonoBehaviour {
     
     private GameObject player;
-    private GameObject Green;
-    private GameObject Yellow;
-    private GameObject Red;
-    private GameObject TLR;
-    private GameObject TLW;
+    public GameObject Green;
+    public GameObject Yellow;
+    public GameObject Red;
+    public GameObject TLR;
+    public GameObject TLW;
 
     private PlayerController playerScript;
 
@@ -27,12 +27,12 @@ public class TrafficLight : MonoBehaviour {
     void Start()
     {
 
-        Green = GameObject.FindGameObjectWithTag("GreenLight");
-        Yellow = GameObject.FindGameObjectWithTag("YellowLight");
-        Red = GameObject.FindGameObjectWithTag("RedLight");
-        TLR = GameObject.FindGameObjectWithTag("TLright");
+       // Green = GameObject.FindGameObjectWithTag("GreenLight");
+        //Yellow = GameObject.FindGameObjectWithTag("YellowLight");
+        //Red = GameObject.FindGameObjectWithTag("RedLight");
+        //TLR = GameObject.FindGameObjectWithTag("TLright");
         TLR.gameObject.SetActive(false);
-        TLW = GameObject.FindGameObjectWithTag("TLwrong");
+        //TLW = GameObject.FindGameObjectWithTag("TLwrong");
         TLW.gameObject.SetActive(false);
 
         StartCoroutine(Count());
@@ -74,26 +74,27 @@ public class TrafficLight : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (win==false)
+        if (other.gameObject.name == "accent")
         {
-            playerScript.playerScore -= 20;
-            TLW.gameObject.SetActive(true);
-            Invoke("DisableText1", 3);
-        }
-        else //if (Green==true || Yellow==true)
-        {
-            playerScript.playerScore += 20;
-            TLR.gameObject.SetActive(true);
-            Invoke("DisableText2", 3);
+            if (win == false)
+            {
+                playerScript.playerScore -= 30;
+                TLW.gameObject.SetActive(true);
+                Invoke("DisableText", 3);
+            }
+            else //if (Green==true || Yellow==true)
+            {
+                playerScript.playerScore += 30;
+                TLR.gameObject.SetActive(true);
+                Invoke("DisableText", 3);
+            }
         }
     }
-    void DisableText1()
+    void DisableText()
     {
         TLW.gameObject.SetActive(false);
-    }
-    void DisableText2()
-    {
         TLR.gameObject.SetActive(false);
+
     }
     private IEnumerator Count()
     {
